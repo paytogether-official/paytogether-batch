@@ -1,0 +1,17 @@
+{
+  "name": "paytogeter",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "run:exchange": "node jobs/exchange-rate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7"
+  }
+}
