@@ -1,6 +1,9 @@
 name: Persist Exchange Rate
 
-on:
+on:  
+  push:
+    branches:
+      - main
   schedule:
     - cron: '10,20,30,40,50 2 * * *'
     - cron: '0,10,20,30,40,50 3-14 * * *'
@@ -20,7 +23,7 @@ jobs:
     steps:
       - name: Check API endpoint with curl
         run: |
-          curl -v "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${{ secrets.KOREAEXIM_API_KEY }}&searchdate=20250321&data=AP01"
+          curl -v --location "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${{ secrets.KOREAEXIM_API_KEY }}&searchdate=20250321&data=AP01"
       
       - name: Checkout
         uses: actions/checkout@v4
