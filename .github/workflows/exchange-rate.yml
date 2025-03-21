@@ -18,6 +18,10 @@ jobs:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
 
     steps:
+      - name: Check API endpoint with curl
+        run: |
+          curl -v "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${{ secrets.KOREAEXIM_API_KEY }}&searchdate=20250321&data=AP01"
+      
       - name: Checkout
         uses: actions/checkout@v4
 
